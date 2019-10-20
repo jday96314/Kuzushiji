@@ -61,6 +61,7 @@ class NextCharacterPredictor(nn.Module):
 		# embedded_input_labels = self.SequencePositionalEncodingLayer(embedded_input_labels)
 
 		# TRANSFORM THE SEQUENCE.
+		# Masking does not help.
 		encoded_labels = self.TransformerEncoder(
 			src = embedded_input_labels)
 		transformed_labels = self.TransformerDecoder(
