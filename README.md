@@ -3,11 +3,11 @@ The 13th place solution to the Kuzushiji Recognition Kaggle competition.
 
 Thanks to Kaggle and the organizers for creating such an interesting competition. Congrats to everyone who finished.
 
-##**Data preprocessing**
+**Data preprocessing**
 
 I resized all images to 512x512. Some of my images were converted to greyscale.
 
-##**Models**
+**Models**
 
 My solution was based on Faster-RCNN, but with several small modifications.
 1.  Instead of choosing anchor sizes arbitrarily, I selected them by running k-means clustering on the widths and heights of the ground truth bounding boxes. I used the cluster centers as my anchor box sizes.
@@ -20,7 +20,7 @@ To combat overfitting, I used dropout quite extensively. 2d dropout was used wit
 
 My final region proposal network uses color images and my final classification network uses greyscale images. I initially used greyscale images for both the region proposal network and the classification network because I didn't think the additional channels would be useful and wanted to conserve space. Near the end of the competition, I tried using color images for both networks. This slightly improved the region proposal network's output but worsened the classification network's accuracy due to overfitting.
 
-##**Failed attempt at using a language model for post-processing the detection results**
+**Failed attempt at using a language model for post-processing the detection results**
 
 I was very interested in using a language model to correct my image processing code's incorrect detections. I spent over a month trying different approaches for this but was unable to get it working well.
 
@@ -32,7 +32,7 @@ To perform the character label corrections, I initially tried network architectu
 
 I think the reason I had so much difficulty getting a language model working well is that my Faster-RCNN based models do a better job considering a character's context than I initially expected. I think in order to get the correction network working well I would have needed to pull in an outside text corpus.
 
-##**Potential improvements**
+**Potential improvements**
 
 There are several potential avenues for improvement that I did not implement or test.
 1. Data augmentation
