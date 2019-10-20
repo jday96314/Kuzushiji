@@ -1,5 +1,5 @@
 # Kuzushiji
-The 13th place solution to the Kuzushiji Recognition Kaggle competition.
+This is the 13th place solution to the Kuzushiji Recognition Kaggle competition.
 
 Thanks to Kaggle and the organizers for creating such an interesting competition. Congrats to everyone who finished.
 
